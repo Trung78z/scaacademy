@@ -4590,6 +4590,12 @@ video {
   animation-delay: 0.7s;
   animation-fill-mode: forwards;
 }
+.show-text .service-item4 {
+  animation-name: fadeInUp;
+  animation-duration: 1s;
+  animation-delay: 0.7s;
+  animation-fill-mode: forwards;
+}
 .show-text .service-button {
   animation-name: fadeInUp;
   animation-duration: 1s;
