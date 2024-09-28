@@ -96,7 +96,7 @@
   </head>
 
   <body class="body-home dark font-primary font-normal text-white">
-    <video id="loadingVideo" class="load-video" autoplay muted loop playsinline>
+    <video id="loadingVideo" class="load-video" autoplay muted playsinline>
       <source src="./loading.mp4" type="video/mp4" />
       Trình duyệt của bạn không hỗ trợ video.
     </video>
@@ -473,7 +473,7 @@
               >
                 <div class="text flex flex-col gap-4 opacity-0">
                   <img
-                    class="w-full aspect-[1183/94] object-contain"
+                    class="w-full aspect-[1183/220] scale-125 object-contain"
                     src="assets/images/starworld.svg"
                     alt="SCA ACADEMY"
                   />
@@ -715,12 +715,12 @@
                   CHÚNG TÔI <span class="text-color1">LÀ</span> AI?
                 </div>
                 <div class="text-[1.5vw]">
-                  <p>
+                  <p class="text-justify">
                     <strong>Học viện</strong> đào tạo giao tiếp Quốc tế
                     Starworld (SCA) được thành lập với sứ mệnh đào tạo nhân tài
                     chuyên môn cao, đáp ứng nhu cầu xã hội hiện đại.
                   </p>
-                  <p>
+                  <p class="text-justify">
                     Bắt đầu từ quy mô nhỏ, học viện đã phát triển vượt bậc, trở
                     thành địa chỉ uy tín cung cấp kiến thức chuyên sâu và kỹ
                     năng thực tiễn. Với đội ngũ giảng viên hàng đầu và cơ sở vật
@@ -2036,7 +2036,7 @@
               LIÊN HỆ VỚI <span class="text-color1">CHÚNG TÔI</span>
             </div>
             <div class="w-[68.5416666667%] mx-auto">
-              <div class="flex justify-between items-center">
+              <form id="contact-form" class="flex justify-between items-center">
                 <div class="w-[40.8054711246%] opacity-0 item-form-2">
                   <img
                     class="w-full h-[calc(717/1080*100vh)] object-cover rounded-3xl"
@@ -2051,6 +2051,7 @@
                     <label class="text-lg leading-[170%]">Họ và tên</label>
                     <input
                       type="text"
+                      id="fullname"
                       class="w-full h-calc(80/1080*100vh) min-h-[40px] bg-white/10 rounded-[10px] border-0 outline-none font-bold text-lg px-5"
                     />
                   </div>
@@ -2059,6 +2060,7 @@
                     <label class="text-lg leading-[170%]">Email</label>
                     <input
                       type="email"
+                      id="email"
                       class="w-full h-calc(80/1080*100vh) min-h-[40px] bg-white/10 rounded-[10px] border-0 outline-none font-bold text-lg px-5"
                     />
                   </div>
@@ -2067,262 +2069,14 @@
                     <label class="text-lg leading-[170%]">Số điện thoại</label>
                     <div class="relative">
                       <select
+                        id="phone-code"
                         class="absolute left-0 top-0 w-[134px] h-full flex justify-center items-center gap-3 bg-[#2D2D2D1A] text-white text-center rounded-[10px] font-bold text-lg"
                       >
                         <option value="+84">+84</option>
-                        <option value="+5">+5</option>
-                        <option value="+1">+1</option>
-                        <option value="+4">+4</option>
-                        <option value="+2">+2</option>
-                        <option value="+3">+3</option>
-                        <option value="+8">+8</option>
-                        <option value="+6">+6</option>
-                        <option value="+1">+1</option>
-                        <option value="+6">+6</option>
-                        <option value="+2">+2</option>
-                        <option value="+2">+2</option>
-                        <option value="+3">+3</option>
-                        <option value="+2">+2</option>
-                        <option value="+6">+6</option>
-                        <option value="+2">+2</option>
-                        <option value="+1">+1</option>
-                        <option value="+8">+8</option>
-                        <option value="+5">+5</option>
-                        <option value="+2">+2</option>
-                        <option value="+3">+3</option>
-                        <option value="+2">+2</option>
-                        <option value="+2">+2</option>
-                        <option value="+3">+3</option>
-                        <option value="+2">+2</option>
-                        <option value="+5">+5</option>
-                        <option value="+2">+2</option>
-                        <option value="+1">+1</option>
-                        <option value="+3">+3</option>
-                        <option value="+8">+8</option>
-                        <option value="+9">+9</option>
-                        <option value="+5">+5</option>
-                        <option value="+4">+4</option>
-                        <option value="+6">+6</option>
-                        <option value="+4">+4</option>
-                        <option value="+2">+2</option>
-                        <option value="+9">+9</option>
-                        <option value="+2">+2</option>
-                        <option value="+2">+2</option>
-                        <option value="+9">+9</option>
-                        <option value="+9">+9</option>
-                        <option value="+8">+8</option>
-                        <option value="+5">+5</option>
-                        <option value="+6">+6</option>
-                        <option value="+9">+9</option>
-                        <option value="+9">+9</option>
-                        <option value="+2">+2</option>
-                        <option value="+6">+6</option>
-                        <option value="+4">+4</option>
-                        <option value="+2">+2</option>
-                        <option value="+3">+3</option>
-                        <option value="+2">+2</option>
-                        <option value="+6">+6</option>
-                        <option value="+6">+6</option>
-                        <option value="+2">+2</option>
-                        <option value="+9">+9</option>
-                        <option value="+2">+2</option>
-                        <option value="+2">+2</option>
-                        <option value="+8">+8</option>
-                        <option value="+2">+2</option>
-                        <option value="+1">+1</option>
-                        <option value="+1">+1</option>
-                        <option value="+5">+5</option>
-                        <option value="+3">+3</option>
-                        <option value="+3">+3</option>
-                        <option value="+2">+2</option>
-                        <option value="+2">+2</option>
-                        <option value=""></option>
-                        <option value="+3">+3</option>
-                        <option value="+2">+2</option>
-                        <option value="+6">+6</option>
-                        <option value="+4">+4</option>
-                        <option value="+9">+9</option>
-                        <option value="+1">+1</option>
-                        <option value="+9">+9</option>
-                        <option value="+9">+9</option>
-                        <option value="+3">+3</option>
-                        <option value="+2">+2</option>
-                        <option value="+9">+9</option>
-                        <option value="+6">+6</option>
-                        <option value="+2">+2</option>
-                        <option value="+1">+1</option>
-                        <option value="+6">+6</option>
-                        <option value="+4">+4</option>
-                        <option value="+9">+9</option>
-                        <option value="+2">+2</option>
-                        <option value="+9">+9</option>
-                        <option value="+9">+9</option>
-                        <option value="+3">+3</option>
-                        <option value="+2">+2</option>
-                        <option value="+5">+5</option>
-                        <option value="+5">+5</option>
-                        <option value="+3">+3</option>
-                        <option value="+4">+4</option>
-                        <option value="+2">+2</option>
-                        <option value="+9">+9</option>
-                        <option value="+3">+3</option>
-                        <option value="+2">+2</option>
-                        <option value="+4">+4</option>
-                        <option value="+8">+8</option>
-                        <option value="+9">+9</option>
-                        <option value="+2">+2</option>
-                        <option value="+4">+4</option>
-                        <option value="+5">+5</option>
-                        <option value="+9">+9</option>
-                        <option value="+7">+7</option>
-                        <option value="+6">+6</option>
-                        <option value="+2">+2</option>
-                        <option value="+3">+3</option>
-                        <option value="+1">+1</option>
-                        <option value="+2">+2</option>
-                        <option value="+9">+9</option>
-                        <option value="+3">+3</option>
-                        <option value="+2">+2</option>
-                        <option value="+3">+3</option>
-                        <option value="+3">+3</option>
-                        <option value="+9">+9</option>
-                        <option value="+5">+5</option>
-                        <option value="+8">+8</option>
-                        <option value="+3">+3</option>
-                        <option value="+2">+2</option>
-                        <option value="+6">+6</option>
-                        <option value="+1">+1</option>
-                        <option value="+3">+3</option>
-                        <option value="+3">+3</option>
-                        <option value="+5">+5</option>
-                        <option value="+1">+1</option>
-                        <option value="+6">+6</option>
-                        <option value="+6">+6</option>
-                        <option value="+2">+2</option>
-                        <option value="+1">+1</option>
-                        <option value="+5">+5</option>
-                        <option value="+6">+6</option>
-                        <option value="+6">+6</option>
-                        <option value="+5">+5</option>
-                        <option value="+6">+6</option>
-                        <option value="+5">+5</option>
-                        <option value="+2">+2</option>
-                        <option value="+1">+1</option>
-                        <option value="+6">+6</option>
-                        <option value="+3">+3</option>
-                        <option value="+3">+3</option>
-                        <option value="+6">+6</option>
-                        <option value="+5">+5</option>
-                        <option value="+6">+6</option>
-                        <option value="+3">+3</option>
-                        <option value="+4">+4</option>
-                        <option value="+2">+2</option>
-                        <option value="+2">+2</option>
-                        <option value="+9">+9</option>
-                        <option value="+5">+5</option>
-                        <option value="+2">+2</option>
-                        <option value="+2">+2</option>
-                        <option value="+4">+4</option>
-                        <option value="+6">+6</option>
-                        <option value="+6">+6</option>
-                        <option value="+2">+2</option>
-                        <option value="+2">+2</option>
-                        <option value="+1">+1</option>
-                        <option value="+2">+2</option>
-                        <option value="+6">+6</option>
-                        <option value=""></option>
-                        <option value="+2">+2</option>
-                        <option value="+3">+3</option>
-                        <option value="+4">+4</option>
-                        <option value="+1">+1</option>
-                        <option value="+5">+5</option>
-                        <option value="+6">+6</option>
-                        <option value="+8">+8</option>
-                        <option value="+5">+5</option>
-                        <option value="+3">+3</option>
-                        <option value="+8">+8</option>
-                        <option value="+4">+4</option>
-                        <option value="+1">+1</option>
-                        <option value="+9">+9</option>
-                        <option value="+2">+2</option>
-                        <option value="+5">+5</option>
-                        <option value="+6">+6</option>
-                        <option value="+3">+3</option>
-                        <option value="+5">+5</option>
-                        <option value="+5">+5</option>
-                        <option value="+4">+4</option>
-                        <option value="+3">+3</option>
-                        <option value="+2">+2</option>
-                        <option value="+2">+2</option>
-                        <option value="+2">+2</option>
-                        <option value="+2">+2</option>
-                        <option value="+8">+8</option>
-                        <option value="+9">+9</option>
-                        <option value="+2">+2</option>
-                        <option value="+3">+3</option>
-                        <option value="+2">+2</option>
-                        <option value="+4">+4</option>
-                        <option value="+2">+2</option>
-                        <option value="+7">+7</option>
-                        <option value="+3">+3</option>
-                        <option value="+2">+2</option>
-                        <option value="+5">+5</option>
-                        <option value="+3">+3</option>
-                        <option value="+6">+6</option>
-                        <option value="+4">+4</option>
-                        <option value="+8">+8</option>
-                        <option value="+5">+5</option>
-                        <option value="+5">+5</option>
-                        <option value="+1">+1</option>
-                        <option value="+1">+1</option>
-                        <option value="+1">+1</option>
-                        <option value="+2">+2</option>
-                        <option value="+2">+2</option>
-                        <option value="+5">+5</option>
-                        <option value="+5">+5</option>
-                        <option value="+5">+5</option>
-                        <option value="+9">+9</option>
-                        <option value="+3">+3</option>
-                        <option value="+2">+2</option>
-                        <option value="+2">+2</option>
-                        <option value="+1">+1</option>
-                        <option value="+3">+3</option>
-                        <option value="+9">+9</option>
-                        <option value="+9">+9</option>
-                        <option value="+2">+2</option>
-                        <option value="+9">+9</option>
-                        <option value="+3">+3</option>
-                        <option value="+5">+5</option>
-                        <option value="+3">+3</option>
-                        <option value="+5">+5</option>
-                        <option value="+9">+9</option>
-                        <option value="+9">+9</option>
-                        <option value="+5">+5</option>
-                        <option value="+2">+2</option>
-                        <option value="+1">+1</option>
-                        <option value="+4">+4</option>
-                        <option value="+1">+1</option>
-                        <option value="+6">+6</option>
-                        <option value="+2">+2</option>
-                        <option value="+1">+1</option>
-                        <option value="+6">+6</option>
-                        <option value="+6">+6</option>
-                        <option value="+2">+2</option>
-                        <option value="+2">+2</option>
-                        <option value="+2">+2</option>
-                        <option value="+5">+5</option>
-                        <option value="+9">+9</option>
-                        <option value="+3">+3</option>
-                        <option value="+1">+1</option>
-                        <option value="+2">+2</option>
-                        <option value="+3">+3</option>
-                        <option value="+9">+9</option>
-                        <option value="+6">+6</option>
-                        <option value="+5">+5</option>
-                        <option value="+1">+1</option>
                       </select>
                       <input
                         type="text"
+                        id="phone"
                         class="w-full h-calc(80/1080*100vh) min-h-[40px] bg-white/10 rounded-[10px] border-0 outline-none font-bold text-lg pl-[150px] pr-5"
                       />
                     </div>
@@ -2334,12 +2088,18 @@
                     >
                     <div class="relative">
                       <select
-                        name="service"
-                        class="new-select w-full h-calc(80/1080*100vh) min-h-[40px] bg-white/10 rounded-[10px] border-0 outline-none font-bold text-lg px-5"
+                        id="service"
+                        class="new-select w-full bg-[#0b1a27] h-calc(80/1080*100vh) min-h-[40px] bg-white/10 rounded-[10px] border-0 outline-none font-bold text-lg px-5"
                       >
-                        <option value="1">Khoá học cơ bản</option>
-                        <option value="2">Khoá học nâng cao</option>
-                        <option value="3">Khoá học 1-1</option>
+                        <option value="Khoá học cơ bản" class="text-black">
+                          Khoá học cơ bản
+                        </option>
+                        <option value="   Khoá học nâng cao" class="text-black">
+                          Khoá học nâng cao
+                        </option>
+                        <option value=" Khoá học 1-1" class="text-black">
+                          Khoá học 1-1
+                        </option>
                       </select>
                     </div>
                   </div>
@@ -2349,10 +2109,15 @@
                       >Yêu cầu cụ thể (Nếu có)</label
                     >
                     <textarea
-                      name=""
+                      id="specific-request"
                       class="w-full h-[calc(145/1080*100vh)] bg-white/10 rounded-[10px] border-0 outline-none font-bold text-lg p-5"
                     ></textarea>
                   </div>
+
+                  <div
+                    id="error-message"
+                    class="text-red-500 mb-4 hidden"
+                  ></div>
 
                   <div class="flex justify-end">
                     <button
@@ -2363,7 +2128,7 @@
                     </button>
                   </div>
                 </div>
-              </div>
+              </form>
             </div>
           </div>
 
@@ -3049,327 +2814,6 @@
                 alt="Video"
               />
             </div>
-            <div
-              class="w-full md:w-[49.0881458967%] flex flex-col gap-[calc(24/1080*100vh)]"
-            >
-              <div class="flex flex-col gap-[calc(12/1080*100vh)]">
-                <label class="text-lg leading-[170%]">Họ và tên</label>
-                <input
-                  type="text"
-                  class="w-full h-calc(80/1080*100vh) min-h-[40px] bg-[#2D2D2D1A] rounded-[10px] border-0 outline-none font-bold text-lg px-5"
-                />
-              </div>
-
-              <div class="flex flex-col gap-[calc(12/1080*100vh)]">
-                <label class="text-lg leading-[170%]">Email</label>
-                <input
-                  type="email"
-                  class="w-full h-calc(80/1080*100vh) min-h-[40px] bg-[#2D2D2D1A] rounded-[10px] border-0 outline-none font-bold text-lg px-5"
-                />
-              </div>
-
-              <div class="flex flex-col gap-[calc(12/1080*100vh)]">
-                <label class="text-lg leading-[170%]">Số điện thoại</label>
-                <div class="relative">
-                  <!-- <div class="">
-              +84
-              <img src="assets/images/caret-down-outline.svg" alt="Carret down">
-            </div> -->
-                  <select
-                    class="absolute left-0 top-0 w-[134px] h-full flex justify-center items-center gap-3 bg-[#2D2D2D1A] text-white text-center rounded-[10px] font-bold text-lg"
-                  >
-                    <option value="+84">+84</option>
-                    <option value="+5">+5</option>
-                    <option value="+1">+1</option>
-                    <option value="+4">+4</option>
-                    <option value="+2">+2</option>
-                    <option value="+3">+3</option>
-                    <option value="+8">+8</option>
-                    <option value="+6">+6</option>
-                    <option value="+1">+1</option>
-                    <option value="+6">+6</option>
-                    <option value="+2">+2</option>
-                    <option value="+2">+2</option>
-                    <option value="+3">+3</option>
-                    <option value="+2">+2</option>
-                    <option value="+6">+6</option>
-                    <option value="+2">+2</option>
-                    <option value="+1">+1</option>
-                    <option value="+8">+8</option>
-                    <option value="+5">+5</option>
-                    <option value="+2">+2</option>
-                    <option value="+3">+3</option>
-                    <option value="+2">+2</option>
-                    <option value="+2">+2</option>
-                    <option value="+3">+3</option>
-                    <option value="+2">+2</option>
-                    <option value="+5">+5</option>
-                    <option value="+2">+2</option>
-                    <option value="+1">+1</option>
-                    <option value="+3">+3</option>
-                    <option value="+8">+8</option>
-                    <option value="+9">+9</option>
-                    <option value="+5">+5</option>
-                    <option value="+4">+4</option>
-                    <option value="+6">+6</option>
-                    <option value="+4">+4</option>
-                    <option value="+2">+2</option>
-                    <option value="+9">+9</option>
-                    <option value="+2">+2</option>
-                    <option value="+2">+2</option>
-                    <option value="+9">+9</option>
-                    <option value="+9">+9</option>
-                    <option value="+8">+8</option>
-                    <option value="+5">+5</option>
-                    <option value="+6">+6</option>
-                    <option value="+9">+9</option>
-                    <option value="+9">+9</option>
-                    <option value="+2">+2</option>
-                    <option value="+6">+6</option>
-                    <option value="+4">+4</option>
-                    <option value="+2">+2</option>
-                    <option value="+3">+3</option>
-                    <option value="+2">+2</option>
-                    <option value="+6">+6</option>
-                    <option value="+6">+6</option>
-                    <option value="+2">+2</option>
-                    <option value="+9">+9</option>
-                    <option value="+2">+2</option>
-                    <option value="+2">+2</option>
-                    <option value="+8">+8</option>
-                    <option value="+2">+2</option>
-                    <option value="+1">+1</option>
-                    <option value="+1">+1</option>
-                    <option value="+5">+5</option>
-                    <option value="+3">+3</option>
-                    <option value="+3">+3</option>
-                    <option value="+2">+2</option>
-                    <option value="+2">+2</option>
-                    <option value=""></option>
-                    <option value="+3">+3</option>
-                    <option value="+2">+2</option>
-                    <option value="+6">+6</option>
-                    <option value="+4">+4</option>
-                    <option value="+9">+9</option>
-                    <option value="+1">+1</option>
-                    <option value="+9">+9</option>
-                    <option value="+9">+9</option>
-                    <option value="+3">+3</option>
-                    <option value="+2">+2</option>
-                    <option value="+9">+9</option>
-                    <option value="+6">+6</option>
-                    <option value="+2">+2</option>
-                    <option value="+1">+1</option>
-                    <option value="+6">+6</option>
-                    <option value="+4">+4</option>
-                    <option value="+9">+9</option>
-                    <option value="+2">+2</option>
-                    <option value="+9">+9</option>
-                    <option value="+9">+9</option>
-                    <option value="+3">+3</option>
-                    <option value="+2">+2</option>
-                    <option value="+5">+5</option>
-                    <option value="+5">+5</option>
-                    <option value="+3">+3</option>
-                    <option value="+4">+4</option>
-                    <option value="+2">+2</option>
-                    <option value="+9">+9</option>
-                    <option value="+3">+3</option>
-                    <option value="+2">+2</option>
-                    <option value="+4">+4</option>
-                    <option value="+8">+8</option>
-                    <option value="+9">+9</option>
-                    <option value="+2">+2</option>
-                    <option value="+4">+4</option>
-                    <option value="+5">+5</option>
-                    <option value="+9">+9</option>
-                    <option value="+7">+7</option>
-                    <option value="+6">+6</option>
-                    <option value="+2">+2</option>
-                    <option value="+3">+3</option>
-                    <option value="+1">+1</option>
-                    <option value="+2">+2</option>
-                    <option value="+9">+9</option>
-                    <option value="+3">+3</option>
-                    <option value="+2">+2</option>
-                    <option value="+3">+3</option>
-                    <option value="+3">+3</option>
-                    <option value="+9">+9</option>
-                    <option value="+5">+5</option>
-                    <option value="+8">+8</option>
-                    <option value="+3">+3</option>
-                    <option value="+2">+2</option>
-                    <option value="+6">+6</option>
-                    <option value="+1">+1</option>
-                    <option value="+3">+3</option>
-                    <option value="+3">+3</option>
-                    <option value="+5">+5</option>
-                    <option value="+1">+1</option>
-                    <option value="+6">+6</option>
-                    <option value="+6">+6</option>
-                    <option value="+2">+2</option>
-                    <option value="+1">+1</option>
-                    <option value="+5">+5</option>
-                    <option value="+6">+6</option>
-                    <option value="+6">+6</option>
-                    <option value="+5">+5</option>
-                    <option value="+6">+6</option>
-                    <option value="+5">+5</option>
-                    <option value="+2">+2</option>
-                    <option value="+1">+1</option>
-                    <option value="+6">+6</option>
-                    <option value="+3">+3</option>
-                    <option value="+3">+3</option>
-                    <option value="+6">+6</option>
-                    <option value="+5">+5</option>
-                    <option value="+6">+6</option>
-                    <option value="+3">+3</option>
-                    <option value="+4">+4</option>
-                    <option value="+2">+2</option>
-                    <option value="+2">+2</option>
-                    <option value="+9">+9</option>
-                    <option value="+5">+5</option>
-                    <option value="+2">+2</option>
-                    <option value="+2">+2</option>
-                    <option value="+4">+4</option>
-                    <option value="+6">+6</option>
-                    <option value="+6">+6</option>
-                    <option value="+2">+2</option>
-                    <option value="+2">+2</option>
-                    <option value="+1">+1</option>
-                    <option value="+2">+2</option>
-                    <option value="+6">+6</option>
-                    <option value=""></option>
-                    <option value="+2">+2</option>
-                    <option value="+3">+3</option>
-                    <option value="+4">+4</option>
-                    <option value="+1">+1</option>
-                    <option value="+5">+5</option>
-                    <option value="+6">+6</option>
-                    <option value="+8">+8</option>
-                    <option value="+5">+5</option>
-                    <option value="+3">+3</option>
-                    <option value="+8">+8</option>
-                    <option value="+4">+4</option>
-                    <option value="+1">+1</option>
-                    <option value="+9">+9</option>
-                    <option value="+2">+2</option>
-                    <option value="+5">+5</option>
-                    <option value="+6">+6</option>
-                    <option value="+3">+3</option>
-                    <option value="+5">+5</option>
-                    <option value="+5">+5</option>
-                    <option value="+4">+4</option>
-                    <option value="+3">+3</option>
-                    <option value="+2">+2</option>
-                    <option value="+2">+2</option>
-                    <option value="+2">+2</option>
-                    <option value="+2">+2</option>
-                    <option value="+8">+8</option>
-                    <option value="+9">+9</option>
-                    <option value="+2">+2</option>
-                    <option value="+3">+3</option>
-                    <option value="+2">+2</option>
-                    <option value="+4">+4</option>
-                    <option value="+2">+2</option>
-                    <option value="+7">+7</option>
-                    <option value="+3">+3</option>
-                    <option value="+2">+2</option>
-                    <option value="+5">+5</option>
-                    <option value="+3">+3</option>
-                    <option value="+6">+6</option>
-                    <option value="+4">+4</option>
-                    <option value="+8">+8</option>
-                    <option value="+5">+5</option>
-                    <option value="+5">+5</option>
-                    <option value="+1">+1</option>
-                    <option value="+1">+1</option>
-                    <option value="+1">+1</option>
-                    <option value="+2">+2</option>
-                    <option value="+2">+2</option>
-                    <option value="+5">+5</option>
-                    <option value="+5">+5</option>
-                    <option value="+5">+5</option>
-                    <option value="+9">+9</option>
-                    <option value="+3">+3</option>
-                    <option value="+2">+2</option>
-                    <option value="+2">+2</option>
-                    <option value="+1">+1</option>
-                    <option value="+3">+3</option>
-                    <option value="+9">+9</option>
-                    <option value="+9">+9</option>
-                    <option value="+2">+2</option>
-                    <option value="+9">+9</option>
-                    <option value="+3">+3</option>
-                    <option value="+5">+5</option>
-                    <option value="+3">+3</option>
-                    <option value="+5">+5</option>
-                    <option value="+9">+9</option>
-                    <option value="+9">+9</option>
-                    <option value="+5">+5</option>
-                    <option value="+2">+2</option>
-                    <option value="+1">+1</option>
-                    <option value="+4">+4</option>
-                    <option value="+1">+1</option>
-                    <option value="+6">+6</option>
-                    <option value="+2">+2</option>
-                    <option value="+1">+1</option>
-                    <option value="+6">+6</option>
-                    <option value="+6">+6</option>
-                    <option value="+2">+2</option>
-                    <option value="+2">+2</option>
-                    <option value="+2">+2</option>
-                    <option value="+5">+5</option>
-                    <option value="+9">+9</option>
-                    <option value="+3">+3</option>
-                    <option value="+1">+1</option>
-                    <option value="+2">+2</option>
-                    <option value="+3">+3</option>
-                    <option value="+9">+9</option>
-                    <option value="+6">+6</option>
-                    <option value="+5">+5</option>
-                    <option value="+1">+1</option>
-                  </select>
-                  <input
-                    type="text"
-                    class="w-full h-calc(80/1080*100vh) min-h-[40px] bg-[#2D2D2D1A] rounded-[10px] border-0 outline-none font-bold text-lg pl-[150px] pr-5"
-                  />
-                </div>
-              </div>
-
-              <div class="flex flex-col gap-[calc(12/1080*100vh)]">
-                <label class="text-lg leading-[170%]"
-                  >Dịch vụ bạn đang quan tâm</label
-                >
-                <div class="relative">
-                  <select
-                    name="service"
-                    class="new-select w-full h-calc(80/1080*100vh) min-h-[40px] bg-[#2D2D2D1A] rounded-[10px] border-0 outline-none font-bold text-lg px-5"
-                  >
-                    <option value="1">Khoá học cơ bản</option>
-                    <option value="2">Khoá học nâng cao</option>
-                    <option value="3">Khoá học 1-1</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="flex flex-col gap-[calc(12/1080*100vh)]">
-                <label class="text-lg leading-[170%]"
-                  >Yêu cầu cụ thể (Nếu có)</label
-                >
-                <textarea
-                  name=""
-                  class="w-full h-[calc(145/1080*100vh)] bg-[#2D2D2D1A] rounded-[10px] border-0 outline-none font-bold text-lg p-5"
-                ></textarea>
-              </div>
-
-              <button
-                type="submit"
-                class="w-full h-calc(80/1080*100vh) min-h-[40px] flex justify-center items-center gap-2 bg-gradient-to-r from-[#FFC45F] via-[#34C7AF] to-[#008BE7] rounded-2xl font-semibold text-2xl text-white px-8 py-2.5"
-              >
-                Gửi ngay
-              </button>
-            </div>
           </div>
         </div>
       </div>
@@ -3477,6 +2921,82 @@
       }
 
       setInterval(autoScroll, 50); // Cuộn tự động mỗi 50ms
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module">
+      import { z } from "https://cdn.jsdelivr.net/npm/zod@3.23.8/+esm";
+      const formSchema = z.object({
+        fullName: z.string().nonempty("Họ và tên không được để trống"),
+        email: z
+          .string()
+          .email("Email không hợp lệ")
+          .nonempty("Email không được để trống"),
+        phone: z.string().nonempty("Số điện thoại không được để trống"),
+        service: z.string().nonempty("Bạn phải chọn dịch vụ"),
+        specificRequest: z.string().optional(),
+      });
+      document
+        .getElementById("contact-form")
+        .addEventListener("submit", async function (event) {
+          event.preventDefault(); // Ngăn chặn form gửi đi
+          const fullname = document.getElementById("fullname").value;
+          const email = document.getElementById("email").value;
+          const phone = document.getElementById("phone").value;
+          const service = document.getElementById("service").value;
+          const specificRequest =
+            document.getElementById("specific-request").value;
+
+          const formData = {
+            fullName: fullname,
+            email: email,
+            phone: phone,
+            service: service,
+            specificRequest: specificRequest,
+          };
+          try {
+            formSchema.parse(formData); // Kiểm tra dữ liệu
+            console.log("Dữ liệu hợp lệ:", formData);
+
+            const response = await fetch("http://45.119.212.23/sendMail", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(formData),
+            });
+            if (responseData.success === false) {
+              return Swal.fire({
+                title: responseData.message,
+                text: "Do you want to continue",
+                icon: "error",
+                confirmButtonText: "Ok",
+              });
+            }
+            document.getElementById("fullname").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("phone").value = "";
+            document.getElementById("service").value = "Khoá học cơ bản";
+            document.getElementById("specific-request").value = "";
+            Swal.fire({
+              title: "Thành công!",
+              text: responseData.message,
+              icon: "success",
+              confirmButtonText: "Ok",
+            });
+          } catch (error) {
+            if (error instanceof z.ZodError) {
+              console.log(error);
+              error.errors.forEach((err) => {
+                Swal.fire({
+                  title: err.message,
+                  text: "Do you want to continue",
+                  icon: "error",
+                  confirmButtonText: "Ok",
+                });
+              });
+            }
+          }
+        });
     </script>
   </body>
 </html>

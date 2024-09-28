@@ -13,16 +13,19 @@ if (IDPage == "home-page") {
 
   if (videoLoad) {
     videoLoad.playbackRate = 2.0;
-    setTimeout(function () {
+
+    // Thêm sự kiện để kiểm tra khi video đã kết thúc
+    videoLoad.addEventListener("ended", function () {
       videoLoad.classList.add("hidden");
       console.log("Class 'hidden' đã được thêm vào video.");
+
       var hMaskInner = document.createElement("div"),
         span = document.createElement("span");
 
       hMaskInner.className = "mask-inner";
       hMaskInner.append(span);
       document.body.appendChild(hMaskInner);
-    }, 3500);
+    });
   } else {
     console.error("Không tìm thấy phần tử video.");
   }

@@ -226,8 +226,8 @@
         </div>
         <div class="relative flex flex-col items-center gap-3 mb-24">
           <img
-            class="w-full aspect-[300/24] object-contain"
-            src="assets/images/jbmedia.svg"
+            class="w-full aspect-[300/80] object-contain"
+            src="assets/images/starworld.svg"
             alt="SCA ACADEMY"
           />
           <div
@@ -356,12 +356,12 @@
           </div>
           <div class="w-full flex flex-col gap-3 px-6">
             <div class="text-base leading-normal">
-              <p>
+              <p class="text-justify">
                 <strong>Học viện</strong> đào tạo giao tiếp Quốc tế Starworld
                 (SCA) được thành lập với sứ mệnh đào tạo nhân tài chuyên môn
                 cao, đáp ứng nhu cầu xã hội hiện đại.
               </p>
-              <p>
+              <p class="text-justify">
                 Bắt đầu từ quy mô nhỏ, học viện đã phát triển vượt bậc, trở
                 thành địa chỉ uy tín cung cấp kiến thức chuyên sâu và kỹ năng
                 thực tiễn. Với đội ngũ giảng viên hàng đầu và cơ sở vật chất
@@ -674,8 +674,8 @@
               >
                 <div class="relative w-full rounded-[20px] overflow-hidden">
                   <img
-                    class="relative z-10"
-                    src="uploads/202407/thao-suong.png"
+                    class="relative z-10 rounded-full"
+                    src="uploads/202408/thao-suong.png"
                     alt="Thảo Sương"
                   />
                   <div
@@ -1720,11 +1720,12 @@
               alt="Video"
             />
           </div>
-          <div class="relative flex flex-col gap-3">
+          <form id="contact-form" class="relative flex flex-col gap-3">
             <div class="flex flex-col gap-1">
               <label class="text-xs">Họ và tên</label>
               <input
                 type="text"
+                id="fullname"
                 class="w-full h-12 bg-white/10 rounded-[10px] border-0 outline-none font-bold text-sm px-4"
               />
             </div>
@@ -1733,6 +1734,7 @@
               <label class="text-xs">Email</label>
               <input
                 type="email"
+                id="email"
                 class="w-full h-12 bg-white/10 rounded-[10px] border-0 outline-none font-bold text-sm px-4"
               />
             </div>
@@ -1752,6 +1754,7 @@
                 </div>
                 <input
                   type="text"
+                  id="phone"
                   class="w-full h-12 bg-white/10 rounded-[10px] border-0 outline-none font-bold text-sm pl-24 pr-4"
                 />
               </div>
@@ -1760,27 +1763,27 @@
             <div class="flex flex-col gap-1">
               <label class="text-xs">Dịch vụ bạn đang quan tâm</label>
               <div class="relative">
-                <input
-                  type="text"
-                  value="Music Video"
-                  class="w-full h-12 bg-white/10 rounded-[10px] border-0 outline-none font-bold text-sm px-4"
-                  readonly
-                />
-                <div
-                  class="absolute right-0 top-0 w-20 h-full flex justify-center items-center"
+                <select
+                  id="service"
+                  class="new-select w-full bg-[#0b1a27] h-calc(80/1080*100vh) min-h-[40px] bg-white/10 rounded-[10px] border-0 outline-none font-bold text-lg"
                 >
-                  <img
-                    src="assets/images/caret-down-outline.svg"
-                    alt="Carret down"
-                  />
-                </div>
+                  <option value="Khoá học cơ bản" class="text-black">
+                    Khoá học cơ bản
+                  </option>
+                  <option value="   Khoá học nâng cao" class="text-black">
+                    Khoá học nâng cao
+                  </option>
+                  <option value=" Khoá học 1-1" class="text-black">
+                    Khoá học 1-1
+                  </option>
+                </select>
               </div>
             </div>
 
             <div class="flex flex-col gap-1">
               <label class="text-xs">Yêu cầu cụ thể (Nếu có)</label>
               <textarea
-                name=""
+                id="specific-request"
                 class="w-full h-14 bg-white/10 rounded-[10px] border-0 outline-none font-bold text-sm p-4"
               ></textarea>
             </div>
@@ -1794,7 +1797,7 @@
                 ngay
               </button>
             </div>
-          </div>
+          </form>
         </div>
         <div class="relative px-6 py-12">
           <div
@@ -1938,6 +1941,83 @@
           infinite: true,
         });
       });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module">
+      import { z } from "https://cdn.jsdelivr.net/npm/zod@3.23.8/+esm";
+      const formSchema = z.object({
+        fullName: z.string().nonempty("Họ và tên không được để trống"),
+        email: z
+          .string()
+          .email("Email không hợp lệ")
+          .nonempty("Email không được để trống"),
+        phone: z.string().nonempty("Số điện thoại không được để trống"),
+        service: z.string().nonempty("Bạn phải chọn dịch vụ"),
+        specificRequest: z.string().optional(),
+      });
+      document
+        .getElementById("contact-form")
+        .addEventListener("submit", async function (event) {
+          event.preventDefault(); // Ngăn chặn form gửi đi
+          const fullname = document.getElementById("fullname").value;
+          const email = document.getElementById("email").value;
+          const phone = document.getElementById("phone").value;
+          const service = document.getElementById("service").value;
+          const specificRequest =
+            document.getElementById("specific-request").value;
+
+          const formData = {
+            fullName: fullname,
+            email: email,
+            phone: phone,
+            service: service,
+            specificRequest: specificRequest,
+          };
+          try {
+            formSchema.parse(formData); // Kiểm tra dữ liệu
+            console.log("Dữ liệu hợp lệ:", formData);
+
+            const response = await fetch("http://45.119.212.23/sendMail", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(formData),
+            });
+            if (responseData.success === false) {
+              return Swal.fire({
+                title: responseData.message,
+                text: "Do you want to continue",
+                icon: "error",
+                confirmButtonText: "Ok",
+              });
+            }
+            document.getElementById("fullname").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("phone").value = "";
+            document.getElementById("service").value = "Khoá học cơ bản";
+            document.getElementById("specific-request").value = "";
+            Swal.fire({
+              title: "Thành công!",
+              text: responseData.message,
+              icon: "success",
+              confirmButtonText: "Ok",
+            });
+          } catch (error) {
+            if (error instanceof z.ZodError) {
+              console.log(error);
+              error.errors.forEach((err) => {
+                Swal.fire({
+                  title: err.message,
+                  text: "Do you want to continue",
+                  icon: "error",
+                  confirmButtonText: "Ok",
+                });
+              });
+            }
+          }
+        });
     </script>
   </body>
 </html>
