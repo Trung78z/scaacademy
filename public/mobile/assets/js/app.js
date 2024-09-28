@@ -139,6 +139,7 @@ $(document).ready(function () {
   $(".service-slider .slick-prev").css("right", wDot + wNext + 111);
 
   $("#js__toggle-menu").on("click", function () {
+    console.log("active");
     $(this).toggleClass("bg-white/20 is-active");
     $("#js__page-right").toggleClass("z-[90]");
     $("#js__logo").toggleClass("z-[90]");
