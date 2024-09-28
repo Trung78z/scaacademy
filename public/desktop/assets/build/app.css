@@ -4572,6 +4572,13 @@ video {
   animation-delay: 0.3s;
   animation-fill-mode: forwards;
 }
+.load-video {
+  width: 100%; /* Hoặc kích thước cụ thể */
+  height: auto;
+  display: block;
+  max-width: 100%;
+  background-color: black; /* Để dễ dàng nhìn thấy video */
+}
 .show-text .service-item1,
 .show-text .news-item,
 .show-text .item-unlock-2 {
