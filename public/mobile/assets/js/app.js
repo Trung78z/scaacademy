@@ -227,8 +227,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Đặt vị trí ban đầu của các phần tử .word
     gsap.set(word, { y: speed * 100 });
-    gsap.set("#js__text-show", { y: 10 });
-    gsap.set("#contact-btn", { y: 10 });
+    // gsap.set("#js__text-show", { y: 10 });
+    // gsap.set("#contact-btn", { y: 10 });
 
     gsap.to(word, {
       scrollTrigger: {
@@ -244,29 +244,29 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  gsap.to("#js__text-show", {
-    scrollTrigger: {
-      trigger: "#js__text-show",
-      start: "center center", // Bắt đầu hiệu ứng khi phần tử chạm đáy viewport
-      end: "bottom center", // Kết thúc hiệu ứng khi phần tử vào giữa viewport
-      scrub: true, // Đồng bộ hiệu ứng với cuộn trang
-      scroller: "#scroll-full", // Chỉ định phần tử container để lắng nghe sự kiện cuộn
-    },
-    opacity: 1,
-    y: 0,
-    ease: "power1.out",
-  });
+  // gsap.to("#js__text-show", {
+  //   scrollTrigger: {
+  //     trigger: "#js__text-show",
+  //     start: "center center", // Bắt đầu hiệu ứng khi phần tử chạm đáy viewport
+  //     end: "bottom center", // Kết thúc hiệu ứng khi phần tử vào giữa viewport
+  //     scrub: true, // Đồng bộ hiệu ứng với cuộn trang
+  //     scroller: "#scroll-full", // Chỉ định phần tử container để lắng nghe sự kiện cuộn
+  //   },
+  //   opacity: 1,
+  //   y: 0,
+  //   ease: "power1.out",
+  // });
 
-  gsap.to("#contact-btn", {
-    scrollTrigger: {
-      trigger: "#contact-btn",
-      start: "center center", // Bắt đầu hiệu ứng khi phần tử chạm đáy viewport
-      end: "bottom center", // Kết thúc hiệu ứng khi phần tử vào giữa viewport
-      scrub: true, // Đồng bộ hiệu ứng với cuộn trang
-      scroller: "#scroll-full", // Chỉ định phần tử container để lắng nghe sự kiện cuộn
-    },
-    opacity: 1,
-    y: 0,
-    ease: "power1.out",
-  });
+  // gsap.to("#contact-btn", {
+  //   scrollTrigger: {
+  //     trigger: "#contact-btn",
+  //     start: "center center", // Bắt đầu hiệu ứng khi phần tử chạm đáy viewport
+  //     end: "bottom center", // Kết thúc hiệu ứng khi phần tử vào giữa viewport
+  //     scrub: true, // Đồng bộ hiệu ứng với cuộn trang
+  //     scroller: "#scroll-full", // Chỉ định phần tử container để lắng nghe sự kiện cuộn
+  //   },
+  //   opacity: 1,
+  //   y: 0,
+  //   ease: "power1.out",
+  // });
 });
