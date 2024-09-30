@@ -22,7 +22,7 @@ jobs:
         SERVER_USER: ${{ secrets.SERVER_USER_ME }}
         SERVER_PASSWORD: ${{ secrets.SERVER_PASSWORD_ME }}
       run: |
-        sshpass -p "$SERVER_PASSWORD" scp -o StrictHostKeyChecking=no -r ./ $SERVER_USER@$SERVER_IP:/test
+        sshpass -p "$SERVER_PASSWORD" scp -o StrictHostKeyChecking=no -r ./ $SERVER_USER@$SERVER_IP:~/test
 
     - name: Run commands on server
       env:
