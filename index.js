@@ -16,6 +16,7 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "public/mobile/index.html"));
   } else {
     app.use(express.static(path.join(__dirname, "public/desktop")));
+    app.use(express.static(path.join(__dirname, "public")));
     res.sendFile(path.join(__dirname, "public/desktop/index.html"));
   }
 });
