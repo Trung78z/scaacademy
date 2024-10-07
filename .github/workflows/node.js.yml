@@ -31,8 +31,13 @@ jobs:
           SERVER_PASSWORD: ${{ secrets.SERVER_PASSWORD_ME }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          sshpass -p "$SERVER_PASSWORD" ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP "git clone https://$GITHUB_TOKEN@github.com/Trung78z/scaacademy.git || (cd scaacademy && git pull)"
-
+          sshpass -p "$SERVER_PASSWORD" ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP "
+            if [ ! -d 'scaacademy' ]; then 
+              git clone https://github.com/Trung78z/scaacademy.git && echo 'Clone completed.';
+            else 
+              cd scaacademy && git pull && echo 'Git pull completed.';
+            fi
+          "
       - name: Run commands on server
         env:
           SERVER_IP: ${{ secrets.SERVER_IP_ME }}
