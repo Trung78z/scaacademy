@@ -10,48 +10,41 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-    - name: Install sshpass
-      run: sudo apt-get install sshpass
+      - name: Install sshpass
+        run: sudo apt-get install sshpass
 
-    - name: Test SSH connection
-      env:
-        SERVER_IP: ${{ secrets.SERVER_IP_ME }}
-        SERVER_USER: ${{ secrets.SERVER_USER_ME }}
-        SERVER_PASSWORD: ${{ secrets.SERVER_PASSWORD_ME }}
-      run: |
-        sshpass -p "$SERVER_PASSWORD" ssh -o StrictHostKeyChecking=no -q $SERVER_USER@$SERVER_IP exit
+      - name: Test SSH connection
+        env:
+          SERVER_IP: ${{ secrets.SERVER_IP_ME }}
+          SERVER_USER: ${{ secrets.SERVER_USER_ME }}
+          SERVER_PASSWORD: ${{ secrets.SERVER_PASSWORD_ME }}
+        run: |
+          sshpass -p "$SERVER_PASSWORD" ssh -o StrictHostKeyChecking=no -q $SERVER_USER@$SERVER_IP exit
 
-    - name: Clean up old deployment
-      env:
-        SERVER_IP: ${{ secrets.SERVER_IP_ME }}
-        SERVER_USER: ${{ secrets.SERVER_USER_ME }}
-        SERVER_PASSWORD: ${{ secrets.SERVER_PASSWORD_ME }}
-      run: |
-        sshpass -p "$SERVER_PASSWORD" ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP "rm -rf test"
+      - name: Deploy code to server
+        env:
+          SERVER_IP: ${{ secrets.SERVER_IP_ME }}
+          SERVER_USER: ${{ secrets.SERVER_USER_ME }}
+          SERVER_PASSWORD: ${{ secrets.SERVER_PASSWORD_ME }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          sshpass -p "$SERVER_PASSWORD" ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP "git clone https://$GITHUB_TOKEN@github.com/Trung78z/scaacademy.git || (cd scaacademy && git pull)"
 
-    - name: Deploy code to server
-      env:
-        SERVER_IP: ${{ secrets.SERVER_IP_ME }}
-        SERVER_USER: ${{ secrets.SERVER_USER_ME }}
-        SERVER_PASSWORD: ${{ secrets.SERVER_PASSWORD_ME }}
-      run: |
-        sshpass -p "$SERVER_PASSWORD" scp -o StrictHostKeyChecking=no -r ./ $SERVER_USER@$SERVER_IP:~/test
-
-    - name: Run commands on server
-      env:
-        SERVER_IP: ${{ secrets.SERVER_IP_ME }}
-        SERVER_USER: ${{ secrets.SERVER_USER_ME }}
-        SERVER_PASSWORD: ${{ secrets.SERVER_PASSWORD_ME }}
-      run: |
-        sshpass -p "$SERVER_PASSWORD" ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP << 'EOF'
-          cd test
-          npm install
-          npm audit fix --force
-          npm install pm2 -g 
-          pm2 stop all      
-          pm2 start index.js  
-          pm2 save      
-        EOF
+      - name: Run commands on server
+        env:
+          SERVER_IP: ${{ secrets.SERVER_IP_ME }}
+          SERVER_USER: ${{ secrets.SERVER_USER_ME }}
+          SERVER_PASSWORD: ${{ secrets.SERVER_PASSWORD_ME }}
+        run: |
+          sshpass -p "$SERVER_PASSWORD" ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP << 'EOF'
+            cd scaacademy
+            npm install
+            npm audit fix --force
+            npm install pm2 -g 
+            pm2 stop all      
+            pm2 start index.js  
+            pm2 save      
+          EOF
