@@ -44,4 +44,4 @@ Thumbs.db
 .vercel
 
 
-.env
+**/.env
